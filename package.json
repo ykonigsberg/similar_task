@@ -1,0 +1,71 @@
+{
+  "name": "browserify-gulp-starter",
+  "version": "0.0.6",
+  "description": "A starter project that uses both browserify and gulp in its build toolchain.\nIncludes demo apps for AngularJs, Famo.us, and Famous-Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bguiz/browserify-gulp-starter"
+  },
+  "keywords": [
+    "build",
+    "browserify",
+    "gulp",
+    "seed",
+    "starter",
+    "angularjs",
+    "famous"
+  ],
+  "author": "bguiz",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bguiz/browserify-gulp-starter/issues"
+  },
+  "homepage": "https://github.com/bguiz/browserify-gulp-starter",
+  "devDependencies": {
+    "browser-sync": "*",
+    "browserify": "*",
+    "browserify-shim": "*",
+    "event-stream": "*",
+    "gulp": "*",
+    "gulp-angular-filesort": "*",
+    "gulp-cached": "*",
+    "gulp-concat": "*",
+    "gulp-csslint": "*",
+    "gulp-header": "*",
+    "gulp-htmlmin": "*",
+    "gulp-inject": "*",
+    "gulp-jshint": "*",
+    "gulp-load-plugins": "*",
+    "gulp-minify-css": "*",
+    "gulp-ng-annotate": "*",
+    "gulp-ng-html2js": "*",
+    "gulp-notify": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-scss-lint": "*",
+    "gulp-serve": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-streamify": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "jshint": "*",
+    "jshint-stylish": "*",
+    "lodash": "*",
+    "main-bower-files": "*",
+    "node-sass": "*",
+    "pretty-hrtime": "*",
+    "require-dir": "*",
+    "rimraf": "*",
+    "streamqueue": "*",
+    "vinyl-source-stream": "*",
+    "watchify": "*",
+    "bootstrap-sass": "^3.3.6",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  },
+  "dependencies": {}
+}

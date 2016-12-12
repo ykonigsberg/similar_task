@@ -1,0 +1,54 @@
+<div class="photos-page">
+  <p>{{ctrl.displayText}}</p>
+  <form ng-submit="ctrl.searchPhotos()">
+    <input class="tags-input" ng-model="ctrl.searchType.searchQuery"/>
+    <input class="search-submit" type="submit" value="go"/>
+    <br>
+    <div class="buttons-wrapper">
+      <label> Search by:
+        <input type="radio" ng-model="ctrl.searchType.state" value="tags">Tags
+      </label>
+      <label>
+        <input type="radio" ng-model="ctrl.searchType.state" value="owner">Owner
+      </label>
+      <br>
+      <label>Page layout:</label>
+      <label>
+        <input type="radio" ng-model="ctrl.displayLayout" value="gallery">Gallery
+      </label>
+      <label>
+        <input type="radio" ng-model="ctrl.displayLayout" value="table">Table
+      </label>
+    </div>
+  </form>
+  <div class="content-wrapper">
+    <ul class="photos" ng-if="ctrl.displayLayout === 'gallery'">
+      <li class="link" ng-repeat="photo in ctrl.photos">
+        <p class="photos-title">{{ photo.title || "(EMPTY)" }}</p>
+        <div my-data-loader="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_m.jpg" class="photo-container"></div>
+        <a ng-href="#owner/{{photo.owner}}">{{ photo.owner }}</a>
+      </li>
+    </ul>
+    <table class="table" ng-if="ctrl.displayLayout === 'table'">
+      <thead>
+      <tr>
+        <td class="sort-true" ng-click="ctrl.changeSorting('')"
+            ng-class="ctrl.setSelectedColumnClass('')">Index</td>
+        <td ng-click="ctrl.changeSorting('title')"
+            ng-class="ctrl.setSelectedColumnClass('title')">Title</td>
+        <td>Image</td>
+        <td ng-click="ctrl.changeSorting('owner')"
+            ng-class="ctrl.setSelectedColumnClass('owner')">Owner</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="photo in ctrl.photos | orderBy : ctrl.sort.column : ctrl.sort.descending">
+        <td> {{ctrl.getIndexValue($index)}}</td>
+        <td>{{ photo.title }}</td>
+        <td><img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_t.jpg"/></td>
+        <td><a ng-href="#owner/{{photo.owner}}">{{ photo.owner }}</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
